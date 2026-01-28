@@ -169,3 +169,10 @@ poetry.toml
 
 # LSP config files
 pyrightconfig.json
+
+*.db
+*.sqlite
+*.sqlite3
+
+logs/
+
