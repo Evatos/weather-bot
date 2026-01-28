@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: weather_bot
+    env_file:
+      - .env
+    volumes:
+      - ./weather_bot.db:/app/weather_bot.db
+      - ./bot.log:/app/bot.log
+    restart: unless-stopped

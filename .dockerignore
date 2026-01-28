@@ -1,0 +1,40 @@
+# Environment
+.env
+
+# Database and logs
+*.db
+*.sqlite
+*.sqlite3
+*.log
+logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Documentation
+README.md
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose.yml

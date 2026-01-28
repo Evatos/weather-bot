@@ -10,35 +10,6 @@ Telegram бот для получения прогноза погоды с пе�
 - 👤 **Профиль пользователя** - сохранение города и настроек по умолчанию
 - 📊 **Персонализация** - автоматическое использование сохранённых настроек
 
-## Структура проекта
-
-```
-weather-bot/
-├── bot.py                 # Точка входа
-├── config.py              # Конфигурация
-├── database/              # Работа с БД
-│   ├── __init__.py
-│   └── db.py
-├── handlers/              # Обработчики команд
-│   ├── __init__.py
-│   ├── start.py
-│   ├── weather.py
-│   └── profile.py
-├── keyboards/             # Клавиатуры
-│   ├── __init__.py
-│   └── keyboards.py
-├── states/                # FSM состояния
-│   ├── __init__.py
-│   └── states.py
-├── utils/                 # Утилиты
-│   ├── __init__.py
-│   └── logger.py
-├── .env                   # Переменные окружения (не в git)
-├── .gitignore
-├── requirements.txt
-└── README.md
-```
-
 ## Установка
 
 1. Клонируй репозиторий:
@@ -69,6 +40,25 @@ WEATHER_API_KEY=твой_ключ_weatherapi
 5. Запусти бота:
 ```bash
 python bot.py
+```
+
+### Вариант 2: Docker
+
+1. Клонируй репозиторий:
+```bash
+git clone https://github.com/твой-username/weather-bot.git
+cd weather-bot
+```
+
+2. Создай файл `.env`:
+```env
+BOT_TOKEN=твой_токен_от_botfather
+WEATHER_API_KEY=твой_ключ_weatherapi
+```
+
+3. Запусти через Docker Compose:
+```bash
+docker-compose up -d
 ```
 
 ## Использование
