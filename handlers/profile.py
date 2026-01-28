@@ -63,7 +63,7 @@ async def change_days_start(message: types.Message, state: FSMContext):
     """Начать изменение количества дней"""
     await state.set_state(WeatherStates.waiting_for_profile_days)
     await message.answer(
-        "Сколько дней показывать в прогнозе? (1-10):",
+        "Сколько дней показывать в прогнозе? (1-14):",
         reply_markup=types.ReplyKeyboardRemove()
     )
 
@@ -73,8 +73,8 @@ async def change_days_save(message: types.Message, state: FSMContext):
     """Сохранить новое количество дней"""
     try:
         days = int(message.text)
-        if days < 1 or days > 10:
-            await message.answer("Количество дней должно быть от 1 до 10!")
+        if days <= 1 or days >= 14:
+            await message.answer("Количество дней должно быть от 1 до 14!")
             return
 
         user_id = message.from_user.id
