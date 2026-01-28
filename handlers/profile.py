@@ -73,7 +73,7 @@ async def change_days_save(message: types.Message, state: FSMContext):
     """Сохранить новое количество дней"""
     try:
         days = int(message.text)
-        if days <= 1 or days >= 14:
+        if days < 1 or days > 14:
             await message.answer("Количество дней должно быть от 1 до 14!")
             return
 

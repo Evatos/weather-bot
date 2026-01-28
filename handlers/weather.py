@@ -106,7 +106,7 @@ async def forecast_get_days(message: types.Message, state: FSMContext):
     """Получение количества дней для прогноза"""
     try:
         days = int(message.text)
-        if days <= 1 or days >= 14:
+        if days < 1 or days > 14:
             await message.answer("Количество дней должно быть от 1 до 14!")
             return
     except ValueError:
