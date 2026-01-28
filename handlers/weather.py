@@ -98,7 +98,7 @@ async def forecast_get_city(message: types.Message, state: FSMContext):
     city = message.text
     await state.update_data(city=city)
     await state.set_state(WeatherStates.waiting_for_forecast_days)
-    await message.answer("На сколько дней прогноз? (1-10):")
+    await message.answer("На сколько дней прогноз? (1-14):")
 
 
 @router.message(WeatherStates.waiting_for_forecast_days)
@@ -154,7 +154,9 @@ async def get_forecast(message: types.Message, city: str, days: int):
 
                         forecast_text += (
                             f"📆 <b>{date}</b>\n"
-                            f"   🌡 Макс: {max_temp}°C | Мін: {min_temp}°C | Средн: {avg_temp}°C\n\n"
+                            f"   🌡 Макс: {max_temp}°C\n"
+                            f"   🌡 Мин: {min_temp}°C\n"
+                            f"   🌡 Средн: {avg_temp}°C\n\n"
                         )
 
                     await message.answer(forecast_text, parse_mode="HTML", reply_markup=get_main_keyboard())
