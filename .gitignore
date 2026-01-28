@@ -176,3 +176,12 @@ pyrightconfig.json
 
 logs/
 
+config_local.py
+
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+
