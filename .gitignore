@@ -184,4 +184,6 @@ config_local.py
 *~
 .DS_Store
 
+# Docker
+docker-compose.override.yml
 
